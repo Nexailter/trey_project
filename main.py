@@ -1,17 +1,20 @@
 import PySimpleGUI as pg
 
-layout =[[pg.Text("Trey is..."),pg.InputText()],
-         [pg.Button("Done"),pg.Button("Close"),pg.InputText()]]
+layout =[[pg.Text("pick a class..."),pg.InputText()],
+        [pg.Text("pick an element..."),pg.InputText()],
+        [pg.Text('pick a username...'),pg.InputText()],
+        [pg.Button('if you leave u a bozo'),pg.Button('continue through the stages of hell')]]
+        
 
-window = pg.Window("Trey's First GUI",layout)
+window = pg.Window("This is literal hell",layout)
 
 while True:
     event, values = window.read()
-    if event == pg.WIN_CLOSED or event == "Close" :
+    if event == pg.WIN_CLOSED or event == 'if you leave u a bozo' :
         break
-    if event == "Done":
+    if event == 'continue through the stages of hell':
         # values is a list of user inputs
-        pg.popup("Trey is " + values[0])
+        pg.popup("your class is " + values[0] + '\n' + "your element is " + values[1] +'\n' + "your username is " + values[2])
 
 
 window.close()
